@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void fetchData() {
         pb.setVisibility(View.VISIBLE);
-        Call<List<MyImage>> call = new DataService().getAPI().getData();
+        Call<List<MyImage>> call = new DataService(getBaseContext()).getAPI().getData();
         call.enqueue(new Callback<List<MyImage>>() {
             @Override
             public void onResponse(Call<List<MyImage>> call, Response<List<MyImage>> response) {
